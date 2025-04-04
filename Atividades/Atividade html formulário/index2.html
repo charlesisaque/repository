@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Interativa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #282c36;
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background: #3b3f4a;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+        h1 {
+            color: #ffcc00;
+        }
+        button {
+            background: #ff5722;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        button:hover {
+            background: #e64a19;
+        }
+        #random-quote {
+            font-style: italic;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bem-vindo à Página Interativa!</h1>
+        <p>Clique nos botões abaixo para se divertir:</p>
+        
+        <button onclick="showRandomQuote()">Gerar Frase Motivacional</button>
+        <button onclick="changeColor()">Mudar Cor de Fundo</button>
+        <button onclick="playSound()">Toque um Som</button>
+        
+        <p id="random-quote">"Clique no botão para uma dose de motivação!"</p>
+        <audio id="sound" src="https://www.soundjay.com/button/beep-07.wav"></audio>
+    </div>
+    
+    <script>
+        function showRandomQuote() {
+            const quotes = [
+                "O sucesso nasce do querer!",
+                "Acredite em si mesmo!",
+                "Nunca é tarde para recomeçar!",
+                "Cada dia é uma nova chance!",
+                "Você é capaz de coisas incríveis!"
+            ];
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            document.getElementById("random-quote").textContent = quotes[randomIndex];
+        }
+
+        function changeColor() {
+            const colors = ["#ff5733", "#33ff57", "#5733ff", "#ff33a1", "#33a1ff"];
+            document.body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        }
+
+        function playSound() {
+            document.getElementById("sound").play();
+        }
+    </script>
+</body>
+</html>
