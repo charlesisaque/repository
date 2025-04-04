@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* 🔹 Estilização do cabeçalho */
+header {
+    background-color: #333;
+    color: white;
+    padding: 70px 0;
+    text-align: center;
+    position: relative; /* Para posicionar a logo */
+}
+
+/* 🔹 Posicionando a logo no canto superior esquerdo */
+.header-logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 200px; /* Ajuste conforme necessário */
+    height: auto;
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* 🔹 Container principal usando Grid */
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Sempre 2 colunas por linha */
+    gap: 20px; /* Espaçamento entre os containers */
+}
+
+/* 🔹 Responsividade: Empilha os containers quando a tela for menor */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr; /* Apenas 1 coluna em telas pequenas */
+    }
+}
+
+/* 🔹 Seções individuais */
+section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* 🔹 Estilização de títulos */
+h2 {
+    color: #333;
+}
+
+/* 🔹 Listas */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    padding: 8px 0;
+}
+
+/* 🔹 Links de contato */
+.contact a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* 🔹 Rodapé */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
